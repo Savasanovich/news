@@ -1,3 +1,5 @@
+{% block content %}
+
 {% load static %}
 <html class="no-js" lang="zxx">
     <head>
@@ -23,7 +25,7 @@
             <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
             <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
    </head>
-
+{% endblock %}
    <body>
        
     <!-- Preloader Start -->
@@ -274,18 +276,19 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="weekly-news-active dot-style d-flex dot-style">
+                            {% for forms in form  %}
                             <div class="weekly-single">
                                 <div class="weekly-img">
-                                    <img src="{% static 'assets/img/news/weeklyNews2.jpg' %}" alt="">
+                                    <img src="{{ forms.image }}" alt="">
                                 </div>
                                 <div class="weekly-caption">
                                     <span class="color1">Strike</span>
-                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                    <h4><a href="#">{{ forms.title }}</a></h4>
                                 </div>
                             </div> 
                             <div class="weekly-single active">
                                 <div class="weekly-img">
-                                        <img src="{% static 'assets/img/news/weeklyNews1.jpg' %}" alt="">
+                                        <img src="{% static 'assets/img/news/weeklyNews5.jpg' %}" alt="">
                                 </div>
                                 <div class="weekly-caption">
                                     <span class="color1">Strike</span>
@@ -310,6 +313,7 @@
                                     <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
                                 </div>
                             </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -346,7 +350,10 @@
                     </div>
                 </div>
                 <div class="row">
+
                     <div class="col-12">
+
+
                         <!-- Nav Card -->
                         <div class="tab-content" id="nav-tabContent">
                             <!-- card one -->
@@ -356,11 +363,11 @@
                                         <div class="col-lg-6 col-md-6">
                                             <div class="single-what-news mb-100">
                                                 <div class="what-img">
-                                                    <img src="{% static 'assets/img/news/whatNews1.jpg' %}" alt="">
+                                                    <img src="/{{ forms.image }}" alt="">
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                    <h4><a href="#">{{ forms.description }}</a></h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -405,6 +412,11 @@
                                 <div class="whats-news-caption">
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6">
+
+
+
+
+
                                             <div class="single-what-news mb-100">
                                                 <div class="what-img">
                                                     <img src="{% static 'assets/img/news/whatNews1.jpg' %}" alt="">

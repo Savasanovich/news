@@ -73,11 +73,14 @@ WSGI_APPLICATION = 'news_sayt.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'n_db',
+        'USER': 'n_user',
+        "PASSWORD": 'n_root',
+        "HOST": 'localhost',
+        "PORT": 5432
     }
 }
 

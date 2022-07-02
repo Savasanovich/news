@@ -1,16 +1,26 @@
 from django.shortcuts import render
+from .forms import *
+from .services import get_news
 
 # Create your views here.
 
 
 def index(request):
-
-    return render(request, 'index.html', {})
+    form = get_news
+    ctx = {
+        'form': form,
+    }
+    return render(request, 'index.html', ctx)
 
 
 def about(request):
 
-    return render(request, 'about.html', {})
+    forms = About
+    ctx = {
+        'forms': forms
+     }
+
+    return render(request, 'about.html', ctx)
 
 def blog(request):
 
